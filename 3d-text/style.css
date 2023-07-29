@@ -1,0 +1,21 @@
+/* 
+    basic concept is that you use almost same-color/ambient text-shadows to create a layering 3d effect on the text
+    all the shadows be gradually increasing in one direction with the same intensity and alt offset 
+*/
+
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    text-shadow: 0px 1px 1px #969696,
+                    0px 2px 1px #969696,
+                    0px 3px 1px #969696,
+                    0px 4px 1px #969696,
+                    0px 20px 40px #ececec34;
+    width: max-content;
+    font-size: 50px;
+}
