@@ -1,0 +1,9 @@
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    background-image: url(./circuitry-3163436__340.webp);
+    background-clip: text;
+    color: transparent;
+    width: max-content;
+    font-size: 100px;
+}

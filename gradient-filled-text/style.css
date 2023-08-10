@@ -1,0 +1,8 @@
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    background-image: linear-gradient( to right, red, blue );
+    background-clip: text;
+    color: transparent;
+    width: max-content;
+}
