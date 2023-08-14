@@ -1,0 +1,21 @@
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 > span {
+    position: relative;
+    top: 0;
+    color: blue;
+}
+span::before {
+    width: 0%;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: black;
+    transition: width 0.5s;
+}
+span:hover::before {
+    width: 100%;
+}

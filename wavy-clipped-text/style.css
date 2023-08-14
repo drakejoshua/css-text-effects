@@ -1,0 +1,47 @@
+/* 
+    main concept here is just creating an overlay on an element and "properly"
+    animating some wavy clip-path in the overlay making some cool wavy animation on the element
+
+    [!]: one tip, make sure when you're generating the wavy clip-path values for the element:
+
+    - your points should appear very curvy when making them in the generator( i mean the online own )
+    - all clip-path values in the animation should have the same number of points( like they should 
+        be all equal in points since they're going to be polygons ) and a very good number will be 16 or 18
+*/
+
+
+body {
+    margin: 0px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 96px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    position: relative;
+    top: 0;
+    inline-size: max-content;
+    color: lightgray;
+}
+
+h1::before {
+    content: attr( text );
+    position: absolute;
+    left: 0;
+    top: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    color: black;
+    animation: wavy 3s linear infinite;
+}
+
+@keyframes wavy {
+    0%, 100% {
+        clip-path: polygon(0 57%, 7% 65%, 16% 73%, 27% 73%, 34% 70%, 40% 65%, 49% 61%, 61% 59%, 69% 61%, 76% 65%, 83% 71%, 90% 76%, 96% 81%, 100% 78%, 100% 100%, 0 100%);
+    }
+    
+    50% {
+        clip-path: polygon(0 64%, 6% 61%, 13% 56%, 23% 56%, 32% 59%, 41% 67%, 48% 73%, 58% 77%, 66% 76%, 73% 73%, 79% 67%, 85% 63%, 93% 60%, 100% 67%, 100% 100%, 0 100%);
+    }
+}
