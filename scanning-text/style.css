@@ -1,0 +1,52 @@
+/* 
+    main concept here is to use the ::before pseudo-element to make an overlay 
+    over the real text using it's own normal content and then animate an scanner-like border
+    with the width of the ::before element changing from 0% to 100%( make sure you put the  setting to not wrap on 
+    whitespace in order to ensure a smooth animation
+*/
+
+
+body {
+    margin-inline: 0px;
+    margin-block: 0px;
+    padding-inline: 20px;
+    padding-block: 20px;
+    background-color: black;
+}
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 96px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
+    top: 0;
+    width: max-content;
+    color: black;
+    -webkit-text-stroke: 3px rgb(25, 221, 25);
+}
+h1::before{
+    content: attr( text );
+    position: absolute;
+    top: 0;
+    left: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    z-index: 1;
+    color: rgb(25, 221, 25);
+    overflow: hidden;
+    white-space: nowrap;
+    border-inline-end: 4px solid currentColor;
+    padding-inline-end: 5px;
+    animation: scan 4s linear infinite;
+}
+@keyframes scan {
+    0%, 10%, 100% {
+        inline-size: 0;
+    }
+    
+    70%, 90% {
+        inline-size: 100%;
+    }   
+}

@@ -1,0 +1,14 @@
+body {
+    margin-inline: 0px;
+    margin-block: 0px;
+    padding-inline: 20px;
+}
+
+h1 {
+    font-size: 96px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: capitalize;
+    font-weight: 800;
+    -webkit-text-stroke: 1px #000000;
+    color: white;
+}
