@@ -1,0 +1,57 @@
+/* 
+    this involves many key things:
+
+    - using the parent div as max-width container in order to avoid the block
+        display error making sure only the text( from h1 ) is shown  ( very key )
+    - using white-space( nowrap ) in order to avoid the text breaking( new-lines ) during the animation
+        due to the changing width of the text( h1 )  ( very key )
+    - applying the steps() function ( with the number of textual characters ) as animation-timing-function in order 
+        to make the animation gradual/framed for each character instead of the usual smooth effect/transition that is usually gotten
+    - animating the right-border in order to show a cursor-like effect  ( very key )
+    - and then of course, just using a normal width from 0 to 100% in order to make the typing effect show :-)
+*/
+
+
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 20px;
+    margin: 0px;
+    background-color: black;
+}
+
+div {
+    width: max-content;
+}
+
+h1 {
+    font-size: 96px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    color: rgb(22, 231, 22);
+    border-inline-end: 2px solid;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: type 3s steps( 14 ), cursor 0.5s linear infinite;
+}
+
+@keyframes type {
+    from {
+        width: 0%;
+    }
+    
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes cursor {
+    from {
+        border-color: transparent;
+    }
+
+    to {
+        border-color: currentColor;
+    }
+}
